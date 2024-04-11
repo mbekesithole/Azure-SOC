@@ -3,9 +3,9 @@
 
 
 ## Introduction
+In this project, I constructed a miniature honeynet within the Azure framework. I collected log data from diverse sources and centralized it within a Log Analytics workspace. This aggregated data was subsequently leveraged by Microsoft Sentinel to generate attack visualizations, trigger alerts, and manage security incidents.
 
-In this project, I build a mini honeynet in Azure and ingest log sources from various resources into a Log Analytics workspace, which is then used by Microsoft Sentinel to build attack maps, trigger alerts, and create incidents. I measured some security metrics in the insecure environment for 24 hours, apply some security controls to harden the environment, measure metrics for another 24 hours, then show the results below. The metrics we will show are:
-
+The methodology involved measuring various security metrics within the vulnerable environment over a period of 24 hours. Subsequently, I implemented a series of security controls to hardern the environment. Following this enhancement, another 24-hour metric measurement phase was conducted. The findings of these measurements are detailed below. The metrics to be presented include:
 - SecurityEvent (Windows Event Logs)
 - Syslog (Linux Event Logs)
 - SecurityAlert (Log Analytics Alerts Triggered)
@@ -72,7 +72,10 @@ Stop Time	2024-03-25 12:33
 | AzureNetworkAnalytics_CL | 0
 
 ## Conclusion
+Within this project, a compact honeynet was established on Microsoft Azure, with log sources seamlessly integrated into a Log Analytics workspace. The deployment of Microsoft Sentinel facilitated swift alert triggering and incident management based on the ingested logs.
 
-In this project, a mini honeynet was constructed in Microsoft Azure and log sources were integrated into a Log Analytics workspace. Microsoft Sentinel was employed to trigger alerts and create incidents based on the ingested logs. Additionally, metrics were measured in the insecure environment before security controls were applied, and then again after implementing security measures. It is noteworthy that the number of security events and incidents were drastically reduced after the security controls were applied, demonstrating their effectiveness.
+Preceding the application of security measures, an initial assessment of metrics was conducted within the vulnerable environment. Following this, security controls were implemented, prompting a subsequent metric evaluation to gauge their impact.
 
-It is worth noting that if the resources within the network were heavily utilized by regular users, it is likely that more security events and alerts may have been generated within the 24-hour period following the implementation of the security controls.
+Significantly, there was a notable reduction in both security events and incidents subsequent to the implementation of security controls, demonstrating their efficacy in bolstering system defenses.
+
+In environments with substantial user activity, it's plausible to expect an increase in security events and alerts within the 24-hour period following the implementation of security controls.
